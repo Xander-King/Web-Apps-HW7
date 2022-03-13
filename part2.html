@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+        CSE 383
+        Name: Xander King (kingar7) 
+        Assignment: Lab7
+        Description:use JavaScript to create page
+-->
+<html lang="en">
+        <head>
+                <meta charset="utf-8">
+                <title>hw7 part2</title>
+        </head>
+
+        <body>
+		<canvas id="canvas" width="1000" height="1000"></canvas>
+                <script language="JavaScript">
+			var canvas = document.getElementById('canvas');
+			for(let i = 0; i < 20; i++) {
+				var r = Math.floor((Math.random() * 256));
+				var g = Math.floor((Math.random() * 256));
+				var b = Math.floor((Math.random() * 256));
+
+				var triInit1 = Math.floor((Math.random() * 1000));
+				var triInit2 = Math.floor((Math.random() * 1000));
+				var triLen1  = Math.floor((Math.random() * 300));
+				var triLen2  = Math.floor((Math.random() * 300));
+
+				if(canvas.getContext) {
+					var ctx = canvas.getContext('2d');
+					ctx.beginPath();
+					ctx.moveTo(triInit1, triInit2);
+					ctx.lineTo((triInit1 + triLen1), (triInit2 + triLen2));
+					ctx.lineTo((triInit1 + triLen1), (triInit2));
+					ctx.lineTo(triInit1, triInit2);
+					ctx.stroke();
+					ctx.closePath();
+					
+					ctx.fillStyle = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+					ctx.fill();
+				}
+			}
+		</script>
+	</body>
+</html>

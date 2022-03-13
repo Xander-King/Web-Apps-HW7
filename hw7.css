@@ -1,0 +1,9 @@
+/*Xander King, CSE383 Section D, hw7*/
+.message {
+visibility: hidden;
+text-align: center;
+color: red;
+font-style: bold;
+border-style: solid;
+border-color: red;
+}
